@@ -10,16 +10,17 @@ type: kubernetes
 name: default
 
 steps: 
-- name: Semantical Versionning
-  image: python:3.6
-  commands:
-    - *add_ssh
-    - pip install -r .semver/requirements.txt
-    - python .semver/main.py
-    - git describe --abbrev=0 --tag | tr -d '\n' > .tags
-  environment:
-    SSH_KEY:
-      from_secret: CI_SSH_KEY
+- name: docker
+  image: banzaicloud/drone-kaniko
+  settings:
+    email: louis.epsi.perdereau@gmail.com
+    dockerfile: ./Dockerfile
+    registry: docker.pkg.github.com
+    repo: lperdereau/file-parser-hasura/api
+    username:
+      from_secret: github_username
+    password:
+      from_secret: github_token
   when:
     branch:
     - master

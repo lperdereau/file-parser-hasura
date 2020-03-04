@@ -1,0 +1,22 @@
+{
+  "name": "parsers",
+  "version": "1.0.0",
+  "description": "This aims to parse file CSV to add in database",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@lperdereau",
+  "license": "MIT",
+  "dependencies": {
+    "csv-file-validator": "^1.7.4",
+    "express": "^4.17.1",
+    "fast-csv": "^4.1.1",
+    "hapi": "^18.1.0",
+    "joi": "^14.3.1",
+    "multer": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "uuid": "^7.0.1",
+    "validator": "^12.2.0"
+  }
+}
