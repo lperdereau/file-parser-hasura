@@ -1,0 +1,20 @@
+---
+kind: pipeline
+type: kubernetes
+name: default
+
+steps: 
+- name: Semantical Versionning
+  image: python:3.6
+  commands:
+    - *add_ssh
+    - pip install -r .semver/requirements.txt
+    - python .semver/main.py
+    - git describe --abbrev=0 --tag | tr -d '\n' > .tags
+  environment:
+    SSH_KEY:
+      from_secret: CI_SSH_KEY
+  when:
+    branch:
+    - master
+    event: push
