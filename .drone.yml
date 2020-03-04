@@ -24,3 +24,19 @@ steps:
     branch:
     - master
     event: push
+
+- name: docker
+  image: banzaicloud/drone-kaniko
+  settings:
+    email: louis.epsi.perdereau@gmail.com
+    dockerfile: ./Dockerfile
+    registry: docker.pkg.github.com
+    repo: lperdereau/file-parser-hasura/api
+    username:
+      from_secret: github_username
+    password:
+      from_secret: github_token
+  when:
+    branch:
+    - master
+    event: push
