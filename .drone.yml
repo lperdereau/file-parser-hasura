@@ -1,4 +1,10 @@
 ---
+.add_ssh: &add_ssh |
+  mkdir ~/.ssh
+  echo $SSH_KEY > ~/.ssh/id_rsa
+  chmod 600 ~/.ssh/id_rsa
+  ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+  
 kind: pipeline
 type: kubernetes
 name: default
