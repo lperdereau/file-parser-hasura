@@ -9,7 +9,10 @@ module.exports = {
     config: {
       payload: payloads.csv,
       validate: validates.csv,
-      handler: handlers.csv
+      handler: handlers.csv,
+      cors: {
+        origin: ["*"]
+      }
     }
   }
 }
