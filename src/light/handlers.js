@@ -5,7 +5,7 @@ const api = require("../api/fetcher.js");
 const mutations = require("../api/mutations.js");
 
 const API_URL = process.env.API_URL || "https://hasura.k8s.louisperdereau.fr/v1/graphql";
-const hasura_admin_secret = process.env.HASURA_ADMIN_SECRET || "";
+const hasura_admin_secret = process.env.HASURA_ADMIN_SECRET || "coucoujeanlouis";
 
 module.exports = {
   csv: async function (req, h) {
