@@ -1,5 +1,5 @@
 module.exports = {
-  INSERT_ADDRESS: `mutation ($id: uuid!, $number: Int!, $street: String!, $type: String!) {
+  INSERT_ADDRESS: `mutation ($id: uuid!, $number: numeric!, $street: String!, $type: String!) {
     insert_address(objects: {id: $id, number: $number, street: $street, type: $type}) {
       returning {
         id
