@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "csv-file-validator": "^1.7.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fast-csv": "^4.1.1",
     "hapi": "^18.1.0",
     "joi": "^14.3.1",
